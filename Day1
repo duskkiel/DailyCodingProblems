@@ -1,0 +1,30 @@
+# Day 1 of Coding Problems
+# Question asked by Google in an interview
+# Given a list of numbers and a number k, return whether any two numbers from the list add up to k.
+# For example, given [10, 15, 3, 7] and k of 17, return true since 10 + 7 is 17.
+
+import random
+equals = False
+winner = ""
+
+k = input("Choose a number: ")
+
+lists = []
+for i in range(0, 5):
+    lists.append(random.randint(0, int(k)))
+
+print(lists)
+print("k = " + str(k) + "\n")
+
+for i in range(0, len(lists)):
+    for j in range(0, len(lists)):
+        print(str(lists[i]) + " + " + str(lists[j]) + " = " + str(lists[i] + lists[j]))
+        sum = lists[i] + lists[j]
+        if sum == int(k):
+            equals = True
+            winner = str(lists[i]) + " + " + str(lists[j]) + " = " + str(lists[i] + lists[j])
+            break
+        else:
+            equals = False
+
+print("\n" + str(equals) + " (" + winner + ")")
