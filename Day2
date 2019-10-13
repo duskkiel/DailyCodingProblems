@@ -1,0 +1,24 @@
+# Day 2 of Coding Problems
+# Interviewer: Uber
+# Given an array of integers, return a new array such that each element at index i of the new array
+#   is the product of all the numbers in the original array except the one at i.
+
+import random
+
+listLength = input("How many numbers in your list? ")
+
+lists = []
+for i in range(0, int(listLength)):
+    lists.append(random.randint(1, 6))
+
+print(lists)
+
+newList = []
+for i in range(0, len(lists)):
+    value = 1
+    for j in range(0, len(lists)):
+        value = (value * lists[j])
+
+    newList.append(int(value / lists[i]))
+
+print("\n" + str(newList))
