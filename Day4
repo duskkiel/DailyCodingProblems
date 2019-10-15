@@ -1,0 +1,24 @@
+# Day 4 of Coding Problems
+# Question asked in Stripe interview.
+# Given an array of integers, find the first missing positive integer in linear time
+#   and constant space. In other words, find the lowest positive integer that does not
+#   exist in the array. The array can contain duplicates and negative numbers as well.
+
+import random
+
+intList = []
+upperBound = 10
+lowerBound = -10
+listLength = input("How many numbers in list? ")
+
+for i in range(0, int(listLength)):
+    intList.append(random.randint(lowerBound, upperBound))
+
+print("List - " + str(intList))
+
+for i in range(0, len(intList)):
+    if i not in intList:
+        if i >= 1:
+            print("\nLowest Positive Missing Integer: " + str(i))
+            break
+            
